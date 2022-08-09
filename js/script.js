@@ -1,94 +1,74 @@
-console.log("Hola Mundo");
-
-let numero=25;
-
-console.log("El numero es ",numero);
-console.log(`El numero es ${numero}`);
-
-let nombre="jose";
-
-console.log(`El nombre es ${nombre}`);
-
-let boolean=true;
-
-console.log(`El estado es ${boolean}`);
-
-let res=numero+5;
-
-console.log(`El resultado es ${res}`);
-console.log("El resultado es "+res);
-console.log(`El resultado es ${numero+5}`);
-
-/*window.alert("Esto es una alerta");*/
-
-let estado=window.confirm("Estas seguro de que quieres salir");
-console.log(`La ventana arrojo ${estado}`);
+//let estado = window.confirm("Estas seguro");
+//console.log(`la ventana arrojo ${estado}`);
 
 /*let num1=prompt("Digite el primer numero");
-let sum=numero+parseInt(num1);
-console.log(`El resultado es ${sum}`);*/
+let numero=5;
+let result=numero+num1+parseInt(num1 );
+console.log(`El resultado es ${result}`);*/
 
-let num2=prompt("Digite el primer numero");
-let num3=prompt("Digite el segundo numero");
-let sum1=parseInt(num2)+parseInt(num3);
-console.log(`El resultado es ${sum1}`);
+/*let num2=prompt("Digite el numero");
+let num3=100;
+let resultado=num3+num2+parseInt(num2);
+console.log(`EL resultado es ${resultado}`);
 
-/*Condicionales*/
-
-if(num2>num3){
-    console.log(`El ${num2} es menor que ${num3}`)
+//Condicionales
+/*if (num2 = resultado){
+    console.log ("Los numeros son iguales:D");
 }
-else if(num2==num3){
-   console.log(`son números iguales`)
+else if(num2 != resultado){
+    console.log("los numeros no son iguales D:");
 }
 else{
-    console.log(`el ${num3} es mayor que ${num2}`)
+    console.log("es mayor el num3");
 }
+*/
 
-/*Operador Ternario*/
+//operador ternario
+/*let num1=5;
+let num2=10;
+let numayor=(num1>num2)
+? "El numero mayor es el primero"
+: "El numero mayor es el segundo"
+console.log(numayor);*/
 
- let nummayor=(num2>num3)
- ?"El numero mayor es el primero"
- :"El numero mayor es el segundo"
+//con condicionales con una condicion compuesta 
+/*let usuario=prompt("Digite el ususario");
+let password=prompt("Digite la contraseña");
+if(usuario=="Daniel" && password=="daza")
+window.alert("Siga bienvenido");
+else if( password!="Daza" || usuario=="Daniel")
+window.alert("Verifique su contraseña")
+else if (usuario!="Daniel" || password=="daza")
+window.alert("Verifique su usuario")
+else window.alert("Verifique sus credenciales")*/
 
-console.log(nummayor);
-
-/*Condiconales con condicion compuesta*/
-
-let usuario=prompt("Digite su usuario");
-let password=prompt("Digite su contraseña");
-
-if(usuario=="jose" && password=="soloelverde"){
-    window.alert("Bienvenido");
-}
-else if(usuario=="jose" && password!="soloelverde"){
-   window.alert("Verifique su contraseña")
-}
-else if(usuario!="jose" && password=="soloelverde"){
-    window.alert("Verifique su usuario")
- }
-else{
-    window.alert("Credenciales de acceso incorrectas");
-}
-
-/*Condicional Multiple*/
-
-let operacion=prompt("Digite S para suma, R para resta, M para multiplicaicon y D para division");
+//Condicional multiple
+/*let num2=prompt("Digite un numero");
+let num3=prompt("Digite otro numero");
+let operacion=prompt("Digite 1 para suma, 2 para resta, 3 para multiplicaicon, 4 para division, 5 para raiz cuadrada y para potencia 6");
 
 switch (operacion) {
-        case "S":
+        case "1":
         alert("La suma de los números ingresados es: " + (parseInt(num2) + parseInt(num3)));
         break;
-        case "R":
+        case "2":
         alert("La resta de los números ingresados es: " + (parseInt(num2) - parseInt(num3)));
         break;
-        case "M":
+        case "3":
         alert("La multiplicación de los números ingresados es: " + parseInt(num2) * parseInt(num3));
         break;
-        case "D":
+        case "4":
         alert("La multiplicación de los números ingresados es: " + parseInt(num2) / parseInt(num3));
         break;    
+        case "5":
+        alert("La raiz cuadrada de los números ingresados es:  ", Math.sqrt(num2,num3) );
+        break; 
+        case "6":
+        alert(`El resultado es${num2}^${num3} ${Math.pow(num2,num3).toFixed(2)}`);
+            break;
         default:
         alert("Error");
         break;
+
 }
+*/
