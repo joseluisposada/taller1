@@ -11,3 +11,32 @@
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 40px;
 }
+
+.respuesta{
+  visibility: hidden;
+  opacity: 0;
+}
+
+.correcto{
+color: green;
+visibility: visible;
+opacity: 1;
+}
+
+.incorrecto{
+  color: red;
+  visibility: visible;
+  opacity: 1;
+}
+
+.parrafo{
+    text-align: center;
+    color: rgb(205, 84, 84);
+    font-family: fantasy;
+    font-size: 30px;
+}
+
+#form button{
+  padding: 10px;
+  text-align: center;
+}
