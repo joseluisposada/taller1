@@ -4,9 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <LINK REL=StyleSheet HREF="css/estilos.css" TYPE="text/css" MEDIA=screen>
+  <LINK REL=StyleSheet HREF="css/ejer5ta.css" TYPE="text/css" MEDIA=screen>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <LINK REL=StyleSheet HREF="css/estilos6.css" TYPE="text/css" MEDIA=screen>
+  <script src="https://kit.fontawesome.com/6131ecdde6.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <title>Index</title>
 </head>
@@ -32,56 +35,88 @@
   </nav><br><br><br>
 
   <div class="container">
-  <div class="row row-cols-1 row-cols-md-2 g-4">
-    <div class="col">
-      <div class="card">
-        <img src="img/triangulo.png" class="card-img-top" width="300px" height="350px">
-        <div class="card-body">
-          <h5 class="card-title">Triangulo</h5>
-          <button type="submit" class="btn btn-danger" id="peri">Perimetro</button>
-          <button type="submit" class="btn btn-danger" id="are">Area</button>
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+      <div class="col">
+        <div class="card">
+          <img src="img/triangulo.png" class="card-img-top" width="300px" height="350px">
+          <div class="card-body">
+            <h5 class="card-title">Triangulo</h5>
+            <button class="btn btn-danger" id="peritri">Perimetro</button>
+            <button class="btn btn-danger" id="aretri">Area</button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="img/circulo.png" class="card-img-top" width="300px" height="350px">
+          <div class="card-body">
+            <h5 class="card-title">Circulo</h5>
+            <button class="btn btn-danger" id="pericir">Perimetro</button>
+            <button class="btn btn-danger" id="arecir">Area</button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="img/cuadrado.png" class="card-img-top" width="300px" height="350px">
+          <div class="card-body">
+            <h5 class="card-title">Cuadrado</h5>
+            <button class="btn btn-danger" id="pericua">Perimetro</button>
+            <button class="btn btn-danger" id="arecua">Area</button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="img/rectangulo.png" class="card-img-top" width="300px" height="350px">
+          <div class="card-body">
+            <h5 class="card-title">Rectangulo</h5>
+            <button class="btn btn-danger" id="perirec">Perimetro</button>
+            <button class="btn btn-danger" id="arerec">Area</button>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col">
-      <div class="card">
-        <img src="img/circulo.png" class="card-img-top" width="300px" height="350px"> 
-        <div class="card-body">
-          <h5 class="card-title">Circulo</h5>
-          <button type="submit" class="btn btn-danger" id="peri">Perimetro</button>
-          <button type="submit" class="btn btn-danger" id="are">Area</button>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card">
-        <img src="img/cuadrado.png" class="card-img-top" width="300px"  height="350px">
-        <div class="card-body">
-          <h5 class="card-title">Cuadrado</h5>
-          <button type="submit" class="btn btn-danger" id="peri">Perimetro</button>
-          <button type="submit" class="btn btn-danger" id="are">Area</button>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card">
-        <img src="img/rectangulo.png" class="card-img-top" width="300px"  height="350px">
-        <div class="card-body">
-          <h5 class="card-title">Rectangulo</h5>
-          <button type="submit" class="btn btn-danger" id="peri">Perimetro</button>
-          <button type="submit" class="btn btn-danger" id="are">Area</button>
-        </div>
-      </div>
+  </div><br><br>
+
+  <div id="ventanatri" class="modaltri">
+    <div class="contenidotri">
+      <span class="cerrarmodaltri"><i class="fa-solid fa-xmark"></i></span>
+      <form class="formtri" id="caltri">
+        <h1>Perimetro Triangulo</h1>
+        <label>Primer Lado</label>
+        <input type="text" id="pritri"><br>
+        <label>Segundo Lado</label>
+        <input type="text" id="segtri"><br>
+        <label>Tercer Lado</label>
+        <input type="text" id="tertri"><br><br>
+        <input type="submit" value="Perimetro" class="boton">
+      </form><br>
     </div>
   </div>
-  </div><br><br>
+
+  <div id="ventanatriar" class="modaltri">
+    <div class="contenidotri">
+      <span class="cerrarmodaltriar"><i class="fa-solid fa-xmark"></i></span>
+      <form class="formtri" id="caltri">
+        <h1>Area Triangulo</h1>
+        <label>Base</label>
+        <input type="text" id="basetri"><br>
+        <label>Altura</label>
+        <input type="text" id="altutri"><br><br>
+        <input type="submit" value="Area" class="boton">
+      </form><br>
+    </div>
+  </div>
 
   <footer class="page-footer">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
           <h5 class="white-text">JAVA SCRIPT</h5>
-          <p class="grey-text text-lighten-4">JavaScript es un lenguaje de programación interpretado, dialecto del estándar ECMAScript. Se define como orientado a objetos, ​ basado en prototipos, imperativo, débilmente tipado y dinámico.</p>
+          <p class="grey-text text-lighten-4">JavaScript es un lenguaje de programación interpretado, dialecto del
+            estándar ECMAScript. Se define como orientado a objetos, ​ basado en prototipos, imperativo, débilmente
+            tipado y dinámico.</p>
         </div>
         <div class="col l4 offset-l2 s12">
           <h5 class="white-text">Links</h5>
@@ -96,14 +131,14 @@
     </div>
     <div class="footer-copyright">
       <div class="container">
-      © 2022 Jose Luis Posada Rodriguez Ficha 2465896
-      <a class="grey-text text-lighten-4 right" href="#">Gracias</a>
+        © 2022 Jose Luis Posada Rodriguez Ficha 2465896
+        <a class="grey-text text-lighten-4 right" href="#">Gracias</a>
       </div>
     </div>
   </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="js/ejer5ta.js></script>
+  <script src="js/ejer5ta.js"></script>
 </body>
 
 </html>

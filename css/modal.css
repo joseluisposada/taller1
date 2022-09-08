@@ -1,10 +1,13 @@
+*{
+    padding: 0;
+    margin: 0;
+}
 body{
     font-size: 16px;
-    margin: 0;
 }
 
 .modal{
-    background-color: rgba(0, 0,0, 0.5);
+    background-color: rgba(0,0,0,0.7);
     width: 100%;
     height: 100%;
     position: fixed;
@@ -16,9 +19,9 @@ body{
 }
 
 .contenidoModal{
-    background-color: white;
-    margin: auto;
+    background-color: #FFFFFF;
     width: 60%;
+    margin: auto;
     position: relative;
     padding: 1rem;
     animation-name: animarmodal;
@@ -26,13 +29,12 @@ body{
 }
 
 @keyframes animarmodal {
-    from{top: -300px; opacity: 0;}
+    from {top: -300px; opacity: 0;}
     to{top: 0; opacity: 1;}
 }
-
 .cerrarModal{
     font-size: 2rem;
-    float: right;
+    float: right;  
 }
 
 .cerrarModal:hover{
@@ -40,10 +42,11 @@ body{
 }
 
 .contenidoModal h2{
-    background-color: blue;
-    color: antiquewhite;
+    background-color: blueviolet;
+    color: #FFFFFF;
     padding: 1rem 0;
     text-align: center;
     clear: both;
 }
+
 
