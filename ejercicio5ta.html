@@ -33,7 +33,7 @@
       </ul>
     </div>
   </nav><br><br><br>
-
+<div class="opciones">
   <div class="container">
     <div class="row row-cols-1 row-cols-md-2 g-4">
       <div class="col">
@@ -90,7 +90,7 @@
         <input type="text" id="segtri"><br>
         <label>Tercer Lado</label>
         <input type="text" id="tertri"><br><br>
-        <input type="submit" value="Perimetro" class="boton">
+        <input type="submit" value="Perimetro" class="boton" id="peritri">
       </form><br>
     </div>
   </div>
@@ -98,16 +98,95 @@
   <div id="ventanatriar" class="modaltri">
     <div class="contenidotri">
       <span class="cerrarmodaltriar"><i class="fa-solid fa-xmark"></i></span>
-      <form class="formtri" id="caltri">
+      <form class="formtri" id="caltriar">
         <h1>Area Triangulo</h1>
         <label>Base</label>
         <input type="text" id="basetri"><br>
         <label>Altura</label>
         <input type="text" id="altutri"><br><br>
+        <input type="submit" value="Area" class="boton" id="areatri">
+      </form><br>
+    </div>
+  </div>
+
+
+  <div id="ventanacir" class="modaltri">
+    <div class="contenidotri">
+      <span class="cerrarmodalcir"><i class="fa-solid fa-xmark"></i></span>
+      <form class="formtri" id="calcir">
+        <h1>Perimetro Circulo</h1>
+        <label>Escriba el radio</label>
+        <input type="text" id="radiocir"><br>
+        <input type="submit" value="Perimetro" class="boton">
+      </form><br>
+    </div>
+  </div>
+
+  <div id="ventanacirar" class="modaltri">
+    <div class="contenidotri">
+      <span class="cerrarmodalcirar"><i class="fa-solid fa-xmark"></i></span>
+      <form class="formtri" id="calcirar">
+        <h1>Area Circulo</h1>
+        <label>Escriba el radio</label>
+        <input type="text" id="radiocirar"><br>
         <input type="submit" value="Area" class="boton">
       </form><br>
     </div>
   </div>
+
+  <div id="ventanacua" class="modaltri">
+    <div class="contenidotri">
+      <span class="cerrarmodalcua"><i class="fa-solid fa-xmark"></i></span>
+      <form class="formtri" id="calcua">
+        <h1>Perimetro Cuadrado</h1>
+        <label>Escriba un lado del cuadrado</label>
+        <input type="text" id="ladocuad"><br>
+        <input type="submit" value="Perimetro" class="boton">
+      </form><br>
+    </div>
+  </div>
+
+  <div id="ventanacuaa" class="modaltri">
+    <div class="contenidotri">
+      <span class="cerrarmodalcuaa"><i class="fa-solid fa-xmark"></i></span>
+      <form class="formtri" id="calcuaa">
+        <h1>Area Cuadrado</h1>
+        <label>Escriba un lado del cuadrado</label>
+        <input type="text" id="ladocuada"><br>
+        <input type="submit" value="Area" class="boton">
+      </form><br>
+    </div>
+  </div>
+
+  <div id="ventanarec" class="modaltri">
+    <div class="contenidotri">
+      <span class="cerrarmodalrec"><i class="fa-solid fa-xmark"></i></span>
+      <form class="formtri" id="calrec">
+        <h1>Perimetro Rectangulo</h1>
+        <label>Escriba la base del rectangulo</label>
+        <input type="text" id="baserec"><br>
+        <label>Escriba la altura del rectangulo</label>
+        <input type="text" id="altrec"><br>
+        <input type="submit" value="Perimetro" class="boton">
+      </form><br>
+    </div>
+  </div>
+
+  <div id="ventanareca" class="modaltri">
+    <div class="contenidotri">
+      <span class="cerrarmodalreca"><i class="fa-solid fa-xmark"></i></span>
+      <form class="formtri" id="calreca">
+        <h1>Area Rectangulo</h1>
+        <label>Escriba la base del rectangulo</label>
+        <input type="text" id="basereca"><br>
+        <label>Escriba la altura del rectangulo</label>
+        <input type="text" id="altreca"><br>
+        <input type="submit" value="Area" class="boton">
+      </form><br>
+    </div>
+  </div>
+
+</div>
 
   <footer class="page-footer">
     <div class="container">
