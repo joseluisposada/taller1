@@ -12,6 +12,16 @@ const reglas = {
     correo: /^[a-zA-Z0-9_+-.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/, //CORREOS
     password: /^(?=.+\d)(?=.*[#$%&!@])(?=.*[a-z])(?=.*[A-Z]).{8,}$/ //PASSWORD
 }
+
+const inputs={
+    numdoc:false,
+    nombre:false,
+    apellido:false,
+    correo:false,
+    telefono:false,
+    password:false
+}
+
 //acceder al formulario
 let form = document.getElementById("frm-usuario")
 let campos = document.querySelectorAll("#frm-usuario input")
@@ -27,13 +37,15 @@ const validarInput = (regla, input, grupo) => {
         document.getElementById(`g-${grupo}`).classList.add('success');
         document.querySelector(`#g-${grupo} i`).classList.add('fa-square-check');
         document.querySelector(`#g-${grupo} i`).classList.remove('fa-circle-exclamation');
-        document.querySelector(`#g-${grupo} .msn-error`).classList.remove('msn-error-visible')
+        document.querySelector(`#g-${grupo} .msn-error`).classList.remove('msn-error-visible');
+        inputs[grupo]=true;
     } else {
         document.getElementById(`g-${grupo}`).classList.add('error');
         document.getElementById(`g-${grupo}`).classList.remove('success');
         document.querySelector(`#g-${grupo} i`).classList.remove('fa-square-check');
         document.querySelector(`#g-${grupo} i`).classList.add('fa-circle-exclamation');
-        document.querySelector(`#g-${grupo} .msn-error`).classList.add('msn-error-visible')
+        document.querySelector(`#g-${grupo} .msn-error`).classList.add('msn-error-visible');
+        inputs[grupo]=false;
     }
 }
 
@@ -59,7 +71,7 @@ const validarcampos = (e) => {
             validarInput(reglas.password,e.target ,e.target.name);
             break;
         default:
-            alert("no se ha recibido ningun evento");
+            
             break;
     }
 }
@@ -107,4 +119,27 @@ const validarcampos=(e)=>{
 campos.forEach((campo) => {
     campo.addEventListener("keyup", validarcampos);
     campo.addEventListener("blur", validarcampos);
+})
+
+form.addEventListener('submit',e=>{
+    e.preventDefault();
+    const terminos=document.getElementById("terminos");
+
+
+    if(inputs.numdoc && inputs.nombre && inputs.apellido && inputs.correo && inputs.telefono && inputs.password && terminos.checked){
+          alert("El usuario ah sido registrado");
+          form.reset();
+          document.querySelectorAll('.success').forEach(icono=>{
+            icono.classList.remove('success')
+          })
+    }
+    else {
+        document.querySelectorAll('.success').forEach(icono=>{
+            icono.classList.remove('error')
+          })
+          document.querySelectorAll('.msn-error').forEach(icono=>{
+            icono.classList.add('msn-error-visible')
+          })   
+    }
+
 })
