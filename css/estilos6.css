@@ -138,3 +138,6 @@
     font-weight: 600;
   }
 
+.icon{
+  cursor: pointer;
+}
