@@ -13,13 +13,13 @@ const reglas = {
     password: /^(?=.+\d)(?=.*[#$%&!@])(?=.*[a-z])(?=.*[A-Z]).{8,}$/ //PASSWORD
 }
 
-const inputs={
-    numdoc:false,
-    nombre:false,
-    apellido:false,
-    correo:false,
-    telefono:false,
-    password:false
+const inputs = {
+    numdoc: false,
+    nombre: false,
+    apellido: false,
+    correo: false,
+    telefono: false,
+    password: false
 }
 
 //acceder al formulario
@@ -38,14 +38,14 @@ const validarInput = (regla, input, grupo) => {
         document.querySelector(`#g-${grupo} i`).classList.add('fa-square-check');
         document.querySelector(`#g-${grupo} i`).classList.remove('fa-circle-exclamation');
         document.querySelector(`#g-${grupo} .msn-error`).classList.remove('msn-error-visible');
-        inputs[grupo]=true;
+        inputs[grupo] = true;
     } else {
         document.getElementById(`g-${grupo}`).classList.add('error');
         document.getElementById(`g-${grupo}`).classList.remove('success');
         document.querySelector(`#g-${grupo} i`).classList.remove('fa-square-check');
         document.querySelector(`#g-${grupo} i`).classList.add('fa-circle-exclamation');
         document.querySelector(`#g-${grupo} .msn-error`).classList.add('msn-error-visible');
-        inputs[grupo]=false;
+        inputs[grupo] = false;
     }
 }
 
@@ -53,26 +53,56 @@ const validarcampos = (e) => {
     console.log("se genero un evento sobre el input" + e.target.name);
     switch (e.target.name) {
         case "numdoc":
-            validarInput(reglas.numeros,e.target ,e.target.name);
+            validarInput(reglas.numeros, e.target, e.target.name);
             break;
         case "nombre":
-            validarInput(reglas.textos,e.target ,e.target.name);
+            validarInput(reglas.textos, e.target, e.target.name);
             break;
         case "apellido":
-            validarInput(reglas.textos,e.target,e.target.name);
+            validarInput(reglas.textos, e.target, e.target.name);
             break;
         case "telefono":
-            validarInput(reglas.numeros,e.target ,e.target.name);
+            validarInput(reglas.numeros, e.target, e.target.name);
             break;
         case "correo":
-            validarInput(reglas.correo,e.target ,e.target.name);
+            validarInput(reglas.correo, e.target, e.target.name);
             break;
-        case "password":
-            validarInput(reglas.password,e.target ,e.target.name);
+            case "password":
+                validarInput(reglas.password,e.target,e.target.name)
+                validarPassword();
             break;
-        default:
-            
+            case "password2":
+                validarPassword();
+        
             break;
+    }
+}
+
+/**Validar Password*/
+const validarPassword=()=>{
+    const pass1 = document.getElementById('password');
+    const pass2 = document.getElementById('password2');
+
+    if (pass1.value === pass2.value){
+        document.getElementById(`g-password2`).classList.remove('error');
+
+        document.getElementById(`g-password2`).classList.add('success');
+
+        document.querySelector(`#g-password2 .msn-error`).classList.remove('msn-error-visible');
+
+        document.querySelector("#g-password2 i").classList.add('fa-circle-check')
+
+        document.querySelector("#g-password2 i").classList.remove('fa-triangle-exclamation')
+        inputs['password'] = true;
+    } else {
+        document.getElementById('g-password2').classList.add('error'); 
+
+        document.querySelector("#g-password2 .msn-error").classList.add('msn-error-visible');
+
+        document.querySelector("#g-password2 i").classList.remove('fa-circle-check')
+
+        document.querySelector("#g-password2 i").classList.add('fa-triangle-exclamation')
+        inputs['password'] = false;
     }
 }
 
@@ -117,29 +147,29 @@ const validarcampos=(e)=>{
 }
 */
 campos.forEach((campo) => {
-    campo.addEventListener("keyup", validarcampos);
-    campo.addEventListener("blur", validarcampos);
-})
+            campo.addEventListener("keyup", validarcampos);
+            campo.addEventListener("blur", validarcampos);
+        })
 
-form.addEventListener('submit',e=>{
-    e.preventDefault();
-    const terminos=document.getElementById("terminos");
+form.addEventListener('submit', e => {
+            e.preventDefault();
+            const terminos = document.getElementById("terminos");
 
 
-    if(inputs.numdoc && inputs.nombre && inputs.apellido && inputs.correo && inputs.telefono && inputs.password && terminos.checked){
-          alert("El usuario ah sido registrado");
-          form.reset();
-          document.querySelectorAll('.success').forEach(icono=>{
-            icono.classList.remove('success')
-          })
-    }
-    else {
-        document.querySelectorAll('.success').forEach(icono=>{
-            icono.classList.remove('error')
-          })
-          document.querySelectorAll('.msn-error').forEach(icono=>{
-            icono.classList.add('msn-error-visible')
-          })   
-    }
+            if (inputs.numdoc && inputs.nombre && inputs.apellido && inputs.correo && inputs.telefono && inputs.password && terminos.checked) {
+                alert("El usuario ah sido registrado");
+                form.reset();
+                document.querySelectorAll('.success').forEach(icono => {
+                    icono.classList.add('error')
+                })
+            }
+            else {
+                document.querySelectorAll('.success').forEach(icono => {
+                    icono.classList.remove('error')
+                })
+                document.querySelectorAll('.msn-error').forEach(icono => {
+                    icono.classList.add('msn-error-visible')
+                })
+            }
 
-})
+        })
